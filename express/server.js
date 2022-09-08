@@ -1,6 +1,7 @@
 'use strict';
 const express = require('express');
 const serverless = require('serverless-http');
+const bodyParser = require("body-parser");
 const app = express();
 
 const router = express.Router();
@@ -25,10 +26,18 @@ router.get('/', (req, res) => {
   res.end();
 });
 
+router.post('/', function(req, res) { 
+var name = req.body.name;
+res.writeHead(200, { 
+  'Content-Type': 'text/html; charset=utf-8'
+});
+res.write(`<h1>Tere, ${name}!</h1>`);
+
+});
 
 
 app.use('/', router);  // path must route to lambda
-
+app.use(bodyParser.json());
 
 module.exports = app;
 module.exports.handler = serverless(app);
