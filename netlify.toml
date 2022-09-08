@@ -4,5 +4,6 @@
 
 [[redirects]]
   from = "/*"
-  to = "https://kevkiil.netlify.app"
+  to = "/.netlify/functions/:splat"
+  status = 200
   headers = {X-From = "Kevin's 1st homework"}
