@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-router.get('/', (req, res) => {
+router.get('/', function(req, res) {
   const name = req.query.name;
   res.writeHead(200, { 'Content-Type': 'text/html' });
   if(name === undefined) {
