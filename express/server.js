@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-router.get('/', function(req, res) {
+app.get('/', function(req, res) {
   const name = req.query.name;
   res.send('Tere, ' + name + '!')
   // if(name === undefined) {
@@ -34,8 +34,8 @@ router.get('/', function(req, res) {
 // router.post('/', (req, res) => res.json({ postBody: req.body }));
 
 // app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+// app.use('/.netlify/functions/server', router);  // path must route to lambda
+// app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports = app;
 module.exports.handler = serverless(app);
