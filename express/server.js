@@ -26,8 +26,8 @@ router.get('/', (req, res) => {
   res.end();
 });
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
-router.post('/', urlencodedParser, function(req, res) { 
+var jsonParser = bodyParser.json()
+router.post('/', jsonParser, function(req, res) { 
 var name = req.body.name;
 res.writeHead(200, { 
   'Content-Type': 'text/html; charset=utf-8'
