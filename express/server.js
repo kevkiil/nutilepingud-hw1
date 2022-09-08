@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-app.get('/', function(req, res) {
+app.use('/', function(req, res) {
   const name = req.query.name;
   res.send('Tere, ' + name + '!')
   // if(name === undefined) {
