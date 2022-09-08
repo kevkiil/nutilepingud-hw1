@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   const name = req.query.name;
   res.writeHead(200, { 'Content-Type': 'text/html' });
   if(name === undefined) {
-      res.write(`<h1>Add your name to the end of the URL like --> https://kevkiil.netlify.app/?name=YourName</h1>`);
+      res.write(`<h1>Asenda YourName näidislingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h1>`);
     } else if (name === 'YourName')
     {
       res.write(`<h1>Kas su nimi on tõepoolest YourName? Ole hea lisa nüüd ikka enda tegelik nimi URL'i lõppu. ;)</h1>`);
