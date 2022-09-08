@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
   });
   if(name === undefined) {
       res.write(`<h1>Replace YourName in the end of the following link and see what happens --> https://kevkiil.netlify.app/?name=YourName</h1>`);
+      res.send('Eino, päisel pööripäeval läks õnneratas läbi nööride.');
     } else if (name === 'YourName')
     {
       res.write(`<h1>Is your name actually YourName? Please change it and use your actual name ;)</h1>`);
