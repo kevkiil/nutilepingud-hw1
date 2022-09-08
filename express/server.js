@@ -1,21 +1,21 @@
-'use strict';
-const express = require('express');
-const path = require('path');
-const serverless = require('serverless-http');
-const app = express();
-const bodyParser = require('body-parser');
+// 'use strict';
+// const express = require('express');
+// const path = require('path');
+// const serverless = require('serverless-http');
+// const app = express();
+// const bodyParser = require('body-parser');
 
-const router = express.Router();
-app.use('/', function(req, res) {
-  const name = req.query.name;
-  res.send('Tere, ' + name + '!')
+// const router = express.Router();
+// app.use('/', function(req, res) {
+//   const name = req.query.name;
+//   res.send('Tere, ' + name + '!')
   // if(name === undefined) {
   //   res.send('Add your name to the end of the URL like --> https://kevkiil.netlify.app/?name=YourName')
   // }
   // else{
   // res.send('Tere, ' + name + '!')
   // }
-})
+// })
 
 
 // get('/', function(req, res) {
@@ -37,5 +37,5 @@ app.use('/', function(req, res) {
 // app.use('/.netlify/functions/server', router);  // path must route to lambda
 // app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
-module.exports = app;
-module.exports.handler = serverless(app);
+// module.exports = app;
+// module.exports.handler = serverless(app);
