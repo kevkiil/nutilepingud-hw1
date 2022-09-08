@@ -15,6 +15,10 @@ router.get('/', (req, res) => {
     {
       res.write(`<h1>Is your name actually YourName? Please change it and use your actual name ;)</h1>`);
     }
+    else if (!name.toLowerCase().search('your') === -1)
+    {
+      res.write(`<h1>I see what you did there ;)</h1>`);
+    }
     else {
       res.write(`<h1>Tere, ${name}!</h1>`);
     }
