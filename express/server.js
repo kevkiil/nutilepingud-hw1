@@ -26,7 +26,8 @@ router.get('/', (req, res) => {
   res.end();
 });
 
-router.post('/', function(req, res) { 
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+router.post('/', urlencodedParser, function(req, res) { 
 var name = req.body.name;
 res.writeHead(200, { 
   'Content-Type': 'text/html; charset=utf-8'
@@ -37,7 +38,6 @@ res.end();
 
 
 app.use('/', router);  // path must route to lambda
-app.use(bodyParser.json());
 
 module.exports = app;
 module.exports.handler = serverless(app);
