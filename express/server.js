@@ -10,10 +10,10 @@ router.get('/', (req, res) => {
     'Content-Type': 'text/html', 'charset':'UTF-16' 
   });
   if(name === undefined) {
-      res.write(`<h1>Asenda YourName näidislingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h1>`);
+      res.write(`<h1>Replace YourName in the end of the following link and see what happens --> https://kevkiil.netlify.app/?name=YourName</h1>`);
     } else if (name === 'YourName')
     {
-      res.write(`<h1>Kas su nimi on tõepoolest YourName? Ole hea lisa nüüd ikka enda tegelik nimi URL'i lõppu. ;)</h1>`);
+      res.write(`<h1>Is your name actually YourName? Please change it and use your actual name ;)</h1>`);
     }
     else {
       res.write(`<h1>Tere, ${name}!</h1>`);
