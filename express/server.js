@@ -7,14 +7,20 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 router.get('/', (req, res) => {
+  const name = req.query.name;
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
+  if(name === undefined) {
+    res.write(`<h1>Add your name to the end of the URL --> https://kevkiil.netlify.app/?name=YourName</h1>`);
+  } else {
+    res.write(`<h1>Tere, ${name}!</h1>`);
+  }
+  
   res.end();
 });
-router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-router.post('/', (req, res) => res.json({ postBody: req.body }));
+// router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
+// router.post('/', (req, res) => res.json({ postBody: req.body }));
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
