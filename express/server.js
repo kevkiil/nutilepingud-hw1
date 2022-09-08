@@ -1,3 +1,13 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const router = express.Router();
+const app = express();
+
+app.get('/', function(req, res) {
+    const name = req.query.name;
+    res.send('Tere, ' + name + '!')
+  })
+
 // 'use strict';
 // const express = require('express');
 // const path = require('path');
