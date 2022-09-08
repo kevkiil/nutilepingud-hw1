@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Kevin's 1st homework</title>
-      <link rel="stylesheet" href="express/public/css/style.css">
+      <link rel="stylesheet" href="public/css/style.css">
    </head>
   `);
   if(name === undefined) {
@@ -41,6 +41,14 @@ router.post('/', jsonParser, function(req, res) {
   res.writeHead(200, { 
     'Content-Type': 'text/html; charset=utf-8'
   });
+  res.write(`
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kevin's 1st homework</title>
+      <link rel="stylesheet" href="public/css/style.css">
+   </head>
+  `);
   res.write(`<h3>Tere, ${name}!</h3>`);
   res.end();
   });
