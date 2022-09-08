@@ -3,6 +3,6 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/.netlify/functions/server"
-  to = "/"
+  from = "/*"
+  to = "https://kevkiil.netlify.app"
   headers = {X-From = "Kevin's 1st homework"}
