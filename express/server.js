@@ -9,7 +9,11 @@ router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   if(name === undefined) {
       res.write(`<h1>Add your name to the end of the URL like --> https://kevkiil.netlify.app/?name=YourName</h1>`);
-    } else {
+    } else if (name === 'YourName')
+    {
+      res.write(`<h1>Kas su nimi on tõepoolest YourName? Ole hea lisa nüüd ikka enda tegelik nimi URL'i lõppu. ;)</h1>`);
+    }
+    else {
       res.write(`<h1>Tere, ${name}!</h1>`);
     }
   res.end();
