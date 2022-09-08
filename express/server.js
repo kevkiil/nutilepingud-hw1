@@ -10,17 +10,17 @@ router.get('/', (req, res) => {
     'Content-Type': 'text/html; charset=utf-8'
   });
   if(name === undefined) {
-      res.write(`<h1>Replace YourName in the end of the following link and see what happens --> https://kevkiil.netlify.app/?name=YourName</h1>`, "utf-8");
+      res.write(`<h1>Asenda YourName näidatud lingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h1>`);
     } else if (name === 'YourName')
     {
-      res.write(`<h1>Is your name actually YourName? Please change it and use your actual name ;)</h1>`, "utf-8");
+      res.write(`<h1>Kas su nimi ongi YourName? Palun muuda see nüüd ikkagi ära ;)</h1>`);
     }
-    else if (name.toLowerCase().search('your') !== -1)
+    else if (name.toLowerCase().replace(" ", "").search('your') !== -1)
     {
-      res.write(`<h1>I see what you did there ;)</h1>`, "utf-8");
+      res.write(`<h1>Arvad, et ma ei näinud seda ette? ;)</h1>`);
     }
     else {
-      res.write(`<h1>Tere, ${name}!</h1>`, "utf-8");
+      res.write(`<h1>Tere, ${name}!</h1>`);
     }
   res.end();
 });
