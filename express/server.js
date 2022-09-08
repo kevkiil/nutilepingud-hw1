@@ -10,6 +10,14 @@ router.get('/', (req, res) => {
   res.writeHead(200, { 
     'Content-Type': 'text/html; charset=utf-8'
   });
+  res.write(`
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kevin's 1st homework</title>
+      <link rel="stylesheet" href="express/public/css/style.css">
+   </head>
+  `);
   if(name === undefined) {
       res.write(`<h3>Asenda YourName näidatud lingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h3>`);
     } else if (name === 'YourName')
@@ -28,15 +36,16 @@ router.get('/', (req, res) => {
 
 var jsonParser = bodyParser.json()
 router.post('/', jsonParser, function(req, res) { 
-var name = req.body.name;
-res.writeHead(200, { 
-  'Content-Type': 'text/html; charset=utf-8'
-});
-res.write(`<h3>Tere, ${name}!</h3>`);
-res.end();
-});
+  
+  var name = req.body.name;
+  res.writeHead(200, { 
+    'Content-Type': 'text/html; charset=utf-8'
+  });
+  res.write(`<h3>Tere, ${name}!</h3>`);
+  res.end();
+  });
 
-
+app.use(express.static(__dirname + '/public'));
 app.use('/', router);  // path must route to lambda
 
 module.exports = app;
