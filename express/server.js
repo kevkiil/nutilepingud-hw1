@@ -12,25 +12,24 @@ router.get('/', (req, res) => {
   });
   res.write(`
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Kevin's 1st homework</title>
-      <link rel="stylesheet" href="public/css/style.css">
    </head>
   `);
   if(name === undefined) {
-      res.write(`<h3>Asenda YourName näidatud lingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h3>`);
-    } else if (name === 'YourName')
-    {
-      res.write(`<h3>Kas su nimi ongi YourName? Palun muuda see nüüd ikkagi ära ;)</h3>`);
-    }
-    else if (name.toLowerCase().replace(" ", "").search('your') !== -1)
-    {
-      res.write(`<h3>Arvad, et ma ei näinud seda ette? ;)</h3>`);
-    }
-    else {
-      res.write(`<h3>Tere, ${name}!</h3>`);
-    }
+    res.write(`<h3>Asenda YourName näidatud lingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h3>`);
+  } else if (name === 'YourName')
+  {
+    res.write(`<h3>Kas su nimi ongi YourName? Palun muuda see nüüd ikkagi ära ;)</h3>`);
+  }
+  else if (name.toLowerCase().replace(" ", "").search('your') !== -1)
+  {
+    res.write(`<h3>Arvad, et ma ei näinud seda ette? ;)</h3>`);
+  }
+  else {
+    res.write(`<h3>Tere, ${name}!</h3>`);
+  }
+  
+  
   res.end();
 });
 
@@ -41,14 +40,6 @@ router.post('/', jsonParser, function(req, res) {
   res.writeHead(200, { 
     'Content-Type': 'text/html; charset=utf-8'
   });
-  res.write(`
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Kevin's 1st homework</title>
-      <link rel="stylesheet" href="public/css/style.css">
-   </head>
-  `);
   res.write(`<h3>Tere, ${name}!</h3>`);
   res.end();
   });
