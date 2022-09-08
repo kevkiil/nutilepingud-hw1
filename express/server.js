@@ -8,12 +8,13 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 router.get('/', function(req, res) {
   const name = req.query.name;
-  if(name === undefined) {
-    res.send('Add your name to the end of the URL like --> https://kevkiil.netlify.app/?name=YourName')
-  }
-  else{
   res.send('Tere, ' + name + '!')
-  }
+  // if(name === undefined) {
+  //   res.send('Add your name to the end of the URL like --> https://kevkiil.netlify.app/?name=YourName')
+  // }
+  // else{
+  // res.send('Tere, ' + name + '!')
+  // }
 })
 
 
