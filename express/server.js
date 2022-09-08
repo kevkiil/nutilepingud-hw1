@@ -8,15 +8,27 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 router.get('/', function(req, res) {
   const name = req.query.name;
-  res.writeHead(200, { 'Content-Type': 'text/html' });
   if(name === undefined) {
-    res.write(`<h1>Add your name to the end of the URL --> https://kevkiil.netlify.app/?name=YourName</h1>`);
-  } else {
-    res.write(`<h1>Tere, ${name}!</h1>`);
+    res.send('Add your name to the end of the URL like --> https://kevkiil.netlify.app/?name=YourName')
   }
+  else{
+  res.send('Tere, ' + name + '!')
+  }
+})
+
+
+// get('/', function(req, res) {
+//   const name = req.query.name;
+//   res.writeHead(200, { 'Content-Type': 'text/html' });
+//   if(name === undefined) {
+//     res.write(`<h1>Add your name to the end of the URL like --> https://kevkiil.netlify.app/?name=YourName</h1>`);
+//   } else {
+//     res.write(`<h1>Tere, ${name}!</h1>`);
+//   }
   
-  res.end();
-});
+//   res.end();
+// });
+
 // router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 // router.post('/', (req, res) => res.json({ postBody: req.body }));
 
