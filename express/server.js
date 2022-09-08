@@ -11,17 +11,17 @@ router.get('/', (req, res) => {
     'Content-Type': 'text/html; charset=utf-8'
   });
   if(name === undefined) {
-      res.write(`<h1>Asenda YourName näidatud lingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h1>`);
+      res.write(`<h3>Asenda YourName näidatud lingi lõpus oma nimega ja vaata mis juhtub --> https://kevkiil.netlify.app/?name=YourName</h3>`);
     } else if (name === 'YourName')
     {
-      res.write(`<h1>Kas su nimi ongi YourName? Palun muuda see nüüd ikkagi ära ;)</h1>`);
+      res.write(`<h3>Kas su nimi ongi YourName? Palun muuda see nüüd ikkagi ära ;)</h3>`);
     }
     else if (name.toLowerCase().replace(" ", "").search('your') !== -1)
     {
-      res.write(`<h1>Arvad, et ma ei näinud seda ette? ;)</h1>`);
+      res.write(`<h3>Arvad, et ma ei näinud seda ette? ;)</h3>`);
     }
     else {
-      res.write(`<h1>Tere, ${name}!</h1>`);
+      res.write(`<h3>Tere, ${name}!</h3>`);
     }
   res.end();
 });
@@ -32,7 +32,7 @@ var name = req.body.name;
 res.writeHead(200, { 
   'Content-Type': 'text/html; charset=utf-8'
 });
-res.write(`<h1>Tere, ${name}!</h1>`);
+res.write(`<h3>Tere, ${name}!</h3>`);
 res.end();
 });
 
